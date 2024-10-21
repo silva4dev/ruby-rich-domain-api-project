@@ -6,7 +6,6 @@ ruby '3.3.0'
 
 gem 'sorbet'
 gem 'sorbet-runtime'
-gem 'tapioca', require: false, group: %i[development test]
 
 group :development, :test do
   gem 'byebug'
@@ -15,4 +14,5 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rspec'
+  gem 'tapioca', require: false
 end
