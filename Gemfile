@@ -6,6 +6,7 @@ ruby '3.3.0'
 
 gem 'sorbet'
 gem 'sorbet-runtime'
+gem 'tapioca', require: false, group: %i[development test]
 
 group :development, :test do
   gem 'byebug'
