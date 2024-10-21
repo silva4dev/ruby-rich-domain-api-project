@@ -13,6 +13,5 @@ group :development, :test do
   gem 'pry'
   gem 'rubocop'
   gem 'rubocop-performance'
-  gem 'rubocop-rspec'
   gem 'tapioca', require: false
 end
