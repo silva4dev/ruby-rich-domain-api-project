@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/rubocop-performance/~>1.6/rubocop-performance.rbi
 #
-# typed: strict
+# typed: true
 
 module RuboCop::Performance
   CONFIG = ::T.let(nil, ::T.untyped)
