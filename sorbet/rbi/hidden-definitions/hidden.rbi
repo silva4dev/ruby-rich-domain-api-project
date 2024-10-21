@@ -3042,6 +3042,56 @@ module CGI::Util
   def unescape_uri_component(*arg); end
 end
 
+class Checkout::Domain::Entity::Coupon
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Entity::Dimension
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Entity::FreightCalculator
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Entity::Item
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Entity::Order
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Entity::OrderCode
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Entity::OrderCoupon
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Entity::OrderItem
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Repository::ItemRepository
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class Checkout::Domain::Repository::OrderRepository
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
 class Class
   def json_creatable?(); end
 end
@@ -9830,6 +9880,15 @@ end
 
 class Minitest::BacktraceFilter
   MT_RE = ::T.let(nil, ::T.untyped)
+end
+
+class Minitest::PrideIO
+  ESC = ::T.let(nil, ::T.untyped)
+  NND = ::T.let(nil, ::T.untyped)
+end
+
+class Minitest::PrideLOL
+  PI_3 = ::T.let(nil, ::T.untyped)
 end
 
 module Minitest::Reportable
@@ -17468,6 +17527,11 @@ module UnicodeNormalize
 end
 
 module UnicodeNormalize
+end
+
+class ValueObject::Cpf
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 module Warning

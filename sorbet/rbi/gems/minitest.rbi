@@ -29,6 +29,8 @@ module Minitest
   def self.load_plugins; end
   def self.parallel_executor; end
   def self.parallel_executor=(arg0); end
+  def self.plugin_pride_init(options); end
+  def self.plugin_pride_options(opts, _options); end
   def self.process_args(args = nil); end
   def self.register_plugin(name_or_mod); end
   def self.reporter; end
@@ -437,4 +439,18 @@ module Minitest::Spec::DSL::InstanceMethods
   def before_setup; end
   def expect(value = nil, &block); end
   def value(value = nil, &block); end
+end
+class Minitest::PrideIO
+  def initialize(io); end
+  def io; end
+  def method_missing(msg, *args); end
+  def pride(string); end
+  def print(o); end
+  def puts(*o); end
+  def self.pride!; end
+  def self.pride?; end
+end
+class Minitest::PrideLOL < Minitest::PrideIO
+  def initialize(io); end
+  def pride(string); end
 end
