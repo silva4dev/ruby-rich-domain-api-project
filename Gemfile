@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 ruby '3.3.0'
 
+gem 'hanami-api'
+gem 'puma'
 gem 'sorbet'
 gem 'sorbet-runtime'
 
@@ -12,6 +14,7 @@ group :development, :test do
   gem 'minitest'
   gem 'pry'
   gem 'rubocop'
+  gem 'rubocop-minitest'
   gem 'rubocop-performance'
   gem 'tapioca', require: false
 end
