@@ -25,3 +25,7 @@ build-iPhoneSimulator/
 /vendor/bundle
 /lib/bundler/man/
 .rvmrc
+/infrastructure/terraform/.terraform/
+/infrastructure/terraform/.terraform.lock.hcl
+/infrastructure/terraform/terraform.tfstate
+/infrastructure/terraform/terraform.tfstate.backup
