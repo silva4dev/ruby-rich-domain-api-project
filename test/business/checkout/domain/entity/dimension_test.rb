@@ -31,17 +31,20 @@ class DimensionTest < Minitest::Test
 
   def test_get_volume
     volume = @dimension.get_volume
+
     assert_in_delta 6.0, volume, 0.01
   end
 
   def test_get_density
     density = @dimension.get_density
+
     assert_in_delta 100.0, density, 0.01
   end
 
   def test_get_density_zero_volume
     dimension_zero_volume = Checkout::Domain::Entity::Dimension.new(0.0, 0.0, 0.0, 600.0)
     density = dimension_zero_volume.get_density
-    assert_equal 0.0, density
+
+    assert_in_delta(0.0, density)
   end
 end

@@ -15,17 +15,19 @@ class ItemTest < Minitest::Test
   def test_initialize
     assert_equal 1, @item.id_item
     assert_equal 'Laptop', @item.description
-    assert_equal 3000.00, @item.price
+    assert_in_delta(3000.00, @item.price)
     assert_equal @dimension, @item.dimension
   end
 
   def test_get_volume
     expected_volume = @dimension.get_volume
+
     assert_equal expected_volume, @item.get_volume
   end
 
   def test_get_density
     expected_density = @dimension.get_density
+
     assert_equal expected_density, @item.get_density
   end
 

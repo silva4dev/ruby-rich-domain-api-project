@@ -30,6 +30,7 @@ class OrderItemTest < Minitest::Test
 
   def test_get_total
     expected_total = @price * @quantity
+
     assert_equal expected_total, @order_item.get_total
   end
 end

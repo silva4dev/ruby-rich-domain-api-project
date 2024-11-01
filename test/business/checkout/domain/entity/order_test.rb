@@ -16,8 +16,8 @@ class OrderTest < Minitest::Test
   def test_initialize
     assert_instance_of Checkout::Domain::Entity::Order, @order
     assert_equal '123.456.789-09', @order.cpf.value
-    assert_equal [], @order.order_items
-    assert_equal 0.0, @order.freight
+    assert_empty @order.order_items
+    assert_in_delta(0.0, @order.freight)
   end
 
   def test_add_item
@@ -25,7 +25,7 @@ class OrderTest < Minitest::Test
 
     assert_equal 1, @order.order_items.size
     assert_equal 2, @order.order_items.first.quantity
-    assert_equal 6040.0, @order.get_total
+    assert_in_delta(6040.0, @order.get_total)
   end
 
   def test_add_duplicate_item

@@ -13,12 +13,14 @@ class OrderCodeTest < Minitest::Test
 
   def test_initialize
     expected_code = '2300000001'
+
     assert_equal expected_code, @order_code.value
   end
 
   def test_generate_code
     code = @order_code.generate_code(@date, @sequence)
     expected_code = '2300000001'
+
     assert_equal expected_code, code
   end
 
@@ -26,6 +28,7 @@ class OrderCodeTest < Minitest::Test
     sequence = 123
     code = @order_code.generate_code(@date, sequence)
     expected_code = '2300000123'
+
     assert_equal expected_code, code
   end
 
@@ -33,6 +36,7 @@ class OrderCodeTest < Minitest::Test
     sequence = 0
     code = @order_code.generate_code(@date, sequence)
     expected_code = '2300000000'
+
     assert_equal expected_code, code
   end
 end

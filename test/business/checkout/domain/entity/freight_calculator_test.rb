@@ -14,6 +14,7 @@ class FreightCalculatorTest < Minitest::Test
 
   def test_calculate_freight_with_positive_density
     freight = Checkout::Domain::Entity::FreightCalculator.calculate(@item)
+
     assert_in_delta 6000.0, freight, 0.01
   end
 
@@ -22,7 +23,8 @@ class FreightCalculatorTest < Minitest::Test
     item_zero_volume = Checkout::Domain::Entity::Item.new(2, 'Item Zero Volume', 1000.00, dimension_zero_volume)
 
     freight = Checkout::Domain::Entity::FreightCalculator.calculate(item_zero_volume)
-    assert_equal 0.0, freight
+
+    assert_in_delta(0.0, freight)
   end
 
   def test_calculate_freight_below_minimum
@@ -30,6 +32,7 @@ class FreightCalculatorTest < Minitest::Test
     item_low_density = Checkout::Domain::Entity::Item.new(3, 'Item Baixa Densidade', 50.00, dimension_low_density)
 
     freight = Checkout::Domain::Entity::FreightCalculator.calculate(item_low_density)
-    assert_equal 10.0, freight
+
+    assert_in_delta(10.0, freight)
   end
 end
