@@ -1,6 +1,6 @@
 resource "kubernetes_service" "nginx_terraform_service" {
   metadata {
-    name      = "nginx-terraform-service"
+    name      = "${var.prefix}-terraform-service"
     namespace = "default"
   }
 
@@ -8,7 +8,7 @@ resource "kubernetes_service" "nginx_terraform_service" {
     type = "LoadBalancer"
 
     selector = {
-      app = "nginx-terraform"
+      app = "${var.prefix}-terraform"
     }
 
     port {

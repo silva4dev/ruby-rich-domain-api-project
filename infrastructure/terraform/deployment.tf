@@ -1,10 +1,10 @@
 
 resource "kubernetes_deployment" "nginx_terraform_a" {
   metadata {
-    name      = "nginx-terraform-a"
+    name      = "${var.prefix}-terraform-a"
     namespace = "default"
     labels = {
-      app     = "nginx-terraform"
+      app     = "${var.prefix}-terraform"
       version = "A"
     }
   }
@@ -14,7 +14,7 @@ resource "kubernetes_deployment" "nginx_terraform_a" {
 
     selector {
       match_labels = {
-        app = "nginx-terraform"
+        app = "${var.prefix}-terraform"
         version = "A"
       }
     }
@@ -22,14 +22,14 @@ resource "kubernetes_deployment" "nginx_terraform_a" {
     template {
       metadata {
         labels = {
-          app     = "nginx-terraform"
+          app     = "${var.prefix}-terraform"
           version = "A"
         }
       }
 
       spec {
         container {
-          name  = "nginx-terraform-a"
+          name  = "${var.prefix}-terraform-a"
           image = "nginx"
           port {
             container_port = 80
@@ -42,10 +42,10 @@ resource "kubernetes_deployment" "nginx_terraform_a" {
 
 resource "kubernetes_deployment" "nginx_terraform_b" {
   metadata {
-    name      = "nginx-terraform-b"
+    name      = "${var.prefix}-terraform-b"
     namespace = "default"
     labels = {
-      app     = "nginx-terraform"
+      app     = "${var.prefix}-terraform"
       version = "B"
     }
   }
@@ -55,7 +55,7 @@ resource "kubernetes_deployment" "nginx_terraform_b" {
 
     selector {
       match_labels = {
-        app = "nginx-terraform"
+        app = "${var.prefix}-terraform"
         version = "B" 
       }
     }
@@ -63,14 +63,14 @@ resource "kubernetes_deployment" "nginx_terraform_b" {
     template {
       metadata {
         labels = {
-          app     = "nginx-terraform"
+          app     = "${var.prefix}-terraform"
           version = "B"
         }
       }
 
       spec {
         container {
-          name  = "nginx-terraform-b"
+          name  = "${var.prefix}-terraform-b"
           image = "nginx"
           port {
             container_port = 80
