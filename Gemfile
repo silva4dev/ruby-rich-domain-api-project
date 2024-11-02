@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '3.3.0'
 
 gem 'hanami-api'
+gem 'pg'
 gem 'puma'
 gem 'sorbet'
 gem 'sorbet-runtime'
