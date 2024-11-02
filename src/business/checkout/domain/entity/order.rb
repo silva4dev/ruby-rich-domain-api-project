@@ -24,13 +24,16 @@ module Checkout
         attr_reader :cpf
 
         sig { returns(T.nilable(OrderCoupon)) }
-        attr_reader :coupon
+        attr_accessor :coupon
 
         sig { returns(Float) }
-        attr_reader :freight
+        attr_accessor :freight
 
         sig { returns(OrderCode) }
         attr_reader :code
+
+        sig { returns(Date) }
+        attr_reader :date
 
         sig { params(cpf: String, date: T.nilable(Time), sequence: Integer).void }
         def initialize(cpf, date = Time.now, sequence = 1)
