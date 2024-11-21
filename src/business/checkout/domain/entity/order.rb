@@ -20,7 +20,7 @@ module Checkout
         sig { returns(T::Array[OrderItem]) }
         attr_reader :order_items
 
-        sig { returns(ValueObject::Cpf) }
+        sig { returns(Core::ValueObject::Cpf) }
         attr_reader :cpf
 
         sig { returns(T.nilable(OrderCoupon)) }
@@ -37,7 +37,7 @@ module Checkout
 
         sig { params(cpf: String, date: T.nilable(Time), sequence: Integer).void }
         def initialize(cpf, date = Time.now, sequence = 1)
-          @cpf = ValueObject::Cpf.new(cpf)
+          @cpf = Core::ValueObject::Cpf.new(cpf)
           @order_items = []
           @freight = 0.0
           date = Time.at(date.to_time.to_i) if date
