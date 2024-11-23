@@ -15,7 +15,7 @@ module Checkout
         class OrderController
           extend T::Sig
 
-          sig { params(http: Checkout::Infrastructure::Http::HttpAdapter, connection: Checkout::Infrastructure::Database::Connection).void }
+          sig { params(http: Checkout::Infrastructure::Http::Http, connection: Checkout::Infrastructure::Database::Connection).void }
           def initialize(http, connection)
             http.on('post', '/orderPreview', lambda { |_, body|
               item_repository = Repository::Database::ItemRepositoryDatabase.new(connection)

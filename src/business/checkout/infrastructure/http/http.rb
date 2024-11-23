@@ -4,7 +4,7 @@
 module Checkout
   module Infrastructure
     module Http
-      class HttpAdapter
+      class Http
         extend T::Sig
 
         sig { params(method: String, url: String, callback: T.proc.params(params: T.untyped, body: T.untyped).returns(T.untyped)).void }

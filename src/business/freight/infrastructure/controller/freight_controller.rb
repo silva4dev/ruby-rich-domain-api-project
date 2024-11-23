@@ -13,7 +13,7 @@ module Freight
       class FreightController
         extend T::Sig
 
-        sig { params(http: Freight::Infrastructure::Http::HttpAdapter, connection: Freight::Infrastructure::Database::Connection).void }
+        sig { params(http: Freight::Infrastructure::Http::Http, connection: Freight::Infrastructure::Database::Connection).void }
         def initialize(http, connection)
           http.on('post', '/calculateFreight', lambda { |_, body|
             city_repository = Repository::CityRepositoryDatabase.new(connection)
